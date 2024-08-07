@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs")
 
-const employeeSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
 
     name: {
         type: String,
@@ -44,7 +44,7 @@ const employeeSchema = new mongoose.Schema({
 
 
 // Middleware to hash the password before saving
-employeeSchema.pre('save', async function (next) {
+userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
         return next();
     }
@@ -58,4 +58,4 @@ employeeSchema.pre('save', async function (next) {
     }
 });
 
-module.exports = mongoose.model("employees", employeeSchema)
+module.exports = mongoose.model("users", userSchema)
