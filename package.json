@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js",
-    "prodStart": "node server.js"
+    "start": "node server.js",
+    "build": "npm install"
   },
   "author": "",
   "license": "ISC",
