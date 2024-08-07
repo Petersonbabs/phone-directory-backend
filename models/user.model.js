@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
 
     name: {
         type: String,
-        required: [true, "Your first name is required."],
+        required: [true, "Your name is required."],
         trim: true,
     },
 
@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
 
     password: {
         type: String,
-        required: [true, "Password if required."],
+        required: [true, "Password is required."],
         minLength: [8, "Password must be at least 8 characters."],
         match: [/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
             'Password musr contain at least one uppercase letter, one lowercase letter, and one number'],
