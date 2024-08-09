@@ -8,6 +8,7 @@ const app = express()
 
 // ROUTERS
 const authRouter = require("./routes/user.route");
+const contactRouter = require("./routes/contacts.route");
 
 // MIDDLEWARES
 app.use(cors());
@@ -16,6 +17,7 @@ app.use(morgan("dev"))
 
 // ENDPOINTS
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/contacts', contactRouter)
 app.get("/api/v1", (req, res) => { res.send("welcome to Phone directory api version 1") })
 
 
