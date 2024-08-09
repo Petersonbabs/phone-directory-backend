@@ -5,6 +5,7 @@ const signJwt = require("../utils/jwt");
 
 // REGISTER
 const signUp = async (req, res, next) => {
+    console.log(req.body)
     try {
         const user = await users.create(req.body)
         if (!user) {
