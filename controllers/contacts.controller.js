@@ -2,7 +2,8 @@ const contacts = require('../models/user.model');
 
 const getContacts = async (req, res, next) => {
     try {
-        const allContacts = await contacts.find()
+        const allContacts = await contacts.find().sort({createdAt: 1})
+        console.log(allContacts);
         if (allContacts.length === 0) {
             res.status(403).json({
                 status: 'failed',
