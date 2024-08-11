@@ -65,7 +65,7 @@ const login = async (req, res, next) => {
             })
             return
         }
-        const token = generateToken(email, user._id);
+        const token = await generateToken(email, user._id);
         res.status(200).json({
             status: 'success',
             message: 'Login successful. Redirecting...',
