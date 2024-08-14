@@ -11,7 +11,13 @@ const authRouter = require("./routes/user.route");
 const contactRouter = require("./routes/contacts.route");
 
 // MIDDLEWARES
-app.use(cors());
+const corsOptions = {
+    origin: 'https://phonedir.vercel.app', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+  };
+  
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("dev"))
 
