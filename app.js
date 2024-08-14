@@ -12,7 +12,7 @@ const contactRouter = require("./routes/contacts.route");
 
 // MIDDLEWARES
 const corsOptions = {
-    origin: 'https://phonedir.vercel.app', 
+    origin: ['https://phonedir.vercel.app', 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
     allowedHeaders: ['Content-Type', 'Authorization'], 
   };

@@ -7,6 +7,10 @@ const url = tempUrl.replace("<password>", password)
 
 const connectToDb = async ()=>{
     mongoose.connect(url)
+    .then(()=>{
+        console.log("DB Connected!");
+    })
+
 }
 
 module.exports = connectToDb
