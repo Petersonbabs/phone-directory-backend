@@ -26,7 +26,6 @@ const signUp = async (req, res, next) => {
             user
         })
     } catch (error) {
-        console.log(error);
         next(error);
 
     }
@@ -35,7 +34,6 @@ const signUp = async (req, res, next) => {
 // Login user
 const login = async (req, res, next) => {
     const { email, password } = req.body;
-    console.log(req.body)
 
     try {
 
@@ -74,7 +72,6 @@ const login = async (req, res, next) => {
         })
 
     } catch (error) {
-        console.log('Error occurred at login controller: ' + error);
         next(error)
     }
 }
@@ -104,7 +101,6 @@ const logout = async (req, res, next) => {
         });
 
     } catch (error) {
-        console.log(error.message);
         next(error);
     }
 }
